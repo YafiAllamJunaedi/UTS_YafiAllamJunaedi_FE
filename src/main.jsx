@@ -10,27 +10,27 @@ import SessionDashboard from './components/pages/SessionDashboard.jsx'
 import RoomDashboard from './components/pages/RoomDashboard.jsx'
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/UTS_YafiAllamJunaedi_FE/",
     element: <LoginPage />
   },
   {
-    path: "/summary",
+    path: "/UTS_YafiAllamJunaedi_FE/summary",
     element: <Dashboard />,
   },
   {
-    path: "/room",
+    path: "/UTS_YafiAllamJunaedi_FE/room",
     element: <RoomDashboard />
   },
   {
-    path: "/member",
+    path: "/UTS_YafiAllamJunaedi_FE/member",
     element: <MemberDashboard />,
   },
   {
-    path: "/trainer",
+    path: "/UTS_YafiAllamJunaedi_FE/trainer",
     element: <TrainerDashboard />
   },
   {
-    path: "/session",
+    path: "/UTS_YafiAllamJunaedi_FE/session",
     element: <SessionDashboard />
   }
 ])

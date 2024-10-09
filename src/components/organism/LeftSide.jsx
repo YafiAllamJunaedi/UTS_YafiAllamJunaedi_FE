@@ -2,7 +2,7 @@ import Sidebar from "../molecules/Sidebar";
 
 const LeftSide = ({room, member, trainer, session}) => {
   return (
-    <div className="w-1/5 h-screen flex flex-col justify-between border-l-0 border-t-0 border-b-0 border-r-2 border-slate-300">
+    <div className="w-1/5 min-h-screen flex flex-col justify-between border-l-0 border-t-0 border-b-0 border-r-2 border-slate-300">
       <div className="w-full h-1/5 bg-red-200 text-center"></div>
       <div className="w-full h-3/5 flex flex-col">
         <div className="w-full flex flex-col justify-center items-center gap-y-5  ">

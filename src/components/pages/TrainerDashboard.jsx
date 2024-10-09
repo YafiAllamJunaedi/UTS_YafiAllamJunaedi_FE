@@ -92,10 +92,10 @@ const TrainerDashboard = () => {
   return (
     <div className="w-full h-screen flex bg-[#ededf9]">
       <LeftSide
-        member="/member"
-        trainer="/trainer"
-        session="/session"
-        room="/room"
+        member="/UTS_YafiAllamJunaedi_FE/member"
+        trainer="/UTS_YafiAllamJunaedi_FE/trainer"
+        session="/UTS_YafiAllamJunaedi_FE/session"
+        room="/UTS_YafiAllamJunaedi_FE/room"
       />
       <div className="w-4/5 h-full flex flex-col p-12">
         <p className="font-bold text-3xl text-[#313b65]">Trainer Management</p>

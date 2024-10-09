@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import img from "./login_logo.webp"
 const LoginPage = () => {
   const navigate = useNavigate();
   const password = "tes";
@@ -8,12 +8,12 @@ const LoginPage = () => {
   
   function validatePassword() {
     inputPassword == password
-      ? navigate("/member")
+      ? navigate("/UTS_YafiAllamJunaedi_FE/member")
       : alert("Wrong password");
   }
   return (
     <div className="w-full bg-black h-screen flex flex-col items-center">
-      <img src="/assets/login_logo.webp" alt="" width="150px" />
+      <img src={img} alt="" width="180px" />
       <div className="w-2/5 h-3/5 border-4 border-white rounded-md">
         <p className="text-white font-semibold text-2xl text-center mt-9">
           ADMIN ONLY

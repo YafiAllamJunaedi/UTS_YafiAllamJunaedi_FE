@@ -18,9 +18,10 @@ const MemberDashboard = () => {
   const [data, setData] = useState({
     name: "",
     age: "",
-    membershipId: "",
+    MembershipId: "",
     join_date: "",
   });
+  console.log(data)
 
   const fetchMembers = async () => {
     try {
@@ -30,7 +31,7 @@ const MemberDashboard = () => {
       console.error("Error fetching members", error);
     }
   };
-  console.log(members);
+  // console.log(members);
 
   useEffect(() => {
     fetchMembers();
@@ -52,10 +53,11 @@ const MemberDashboard = () => {
         // setEditProductId(null);
       } else {
         await addMember(data);
+        console.log(data)
       }
       fetchMembers();
       setOpenForm(false);
-      setData({ name: "", age: "", membershipId: "", join_date: "" });
+      setData({ name: "", age: "", MembershipId: "", join_date: "" });
       setIsEditing(false);
       setEditProductId(null);
       // try {
@@ -72,11 +74,14 @@ const MemberDashboard = () => {
   };
 
   function handleOnChange(e) {
-    const { name, value } = e.target;
-    setData((prevItem) => ({
-      ...prevItem,
-      [name]: value,
-    }));
+    const newData= {...data}
+    newData[e.target.name]=e.target.value
+    setData({...newData,MembershipId:parseInt(newData.MembershipId)})
+    // const { name, value } = e.target;
+    // setData((prevItem) => ({
+    //   ...prevItem,
+    //   [name]: value,
+    // }));
   }
 
   // delete
@@ -97,12 +102,12 @@ const MemberDashboard = () => {
   };
 
   return (
-    <div className="w-full h-screen flex bg-[#ededf9]">
+    <div className="w-full min-h-screen flex bg-[#ededf9]">
       <LeftSide
-        room="/room"
-        member="/member"
-        trainer="/trainer"
-        session="/session"
+        room="/UTS_YafiAllamJunaedi_FE/room"
+        member="/UTS_YafiAllamJunaedi_FE/member"
+        trainer="/UTS_YafiAllamJunaedi_FE/trainer"
+        session="/UTS_YafiAllamJunaedi_FE/session"
       />
       <div className="w-4/5 h-full flex flex-col p-12">
         <p className="font-bold text-3xl text-[#313b65]">Member Management</p>
@@ -111,7 +116,7 @@ const MemberDashboard = () => {
             <p className="ml-3 text-white text-base font-semibold">
               TOTAL MEMBERS
             </p>
-            <p className="ml-3 text-white text-sm font-thin">4</p>
+            <p className="ml-3 text-white text-sm font-thin">{members.length}</p>
           </div>
           <div className="w-1/5 bg-[#5b5ae6] p-3 rounded-lg">
             <p className="ml-3 text-white text-base font-semibold">GROWTH</p>
@@ -119,7 +124,7 @@ const MemberDashboard = () => {
           </div>
           <div className="w-1/5 bg-[#5b5ae6] p-3 rounded-lg">
             <p className="ml-3 text-white text-base font-semibold">TARGET</p>
-            <p className="ml-3 text-white text-sm font-thin">4/20</p>
+            <p className="ml-3 text-white text-sm font-thin">{members.length}/20</p>
           </div>
         </div>
         <div className="w-full h-full mt-10">
@@ -154,7 +159,7 @@ const MemberDashboard = () => {
               onChange={handleOnChange}
               value1={data.name}
               value2={data.age}
-              value3={data.membershipId}
+              value3={data.MembershipId}
               value4={data.join_date}
               handleSubmit={handleSubmit}
             />
